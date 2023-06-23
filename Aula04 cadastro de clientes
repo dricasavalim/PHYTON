@@ -1,0 +1,28 @@
+import numpy as np
+
+# Criando a matriz de cadastro de clientes
+num_clientes = 3
+dados_clientes = np.empty((num_clientes, 3), dtype=object)
+
+# Função para cadastrar um cliente
+def cadastrar_cliente(cliente_id, nome, email):
+    dados_clientes[cliente_id, 0] = nome
+    dados_clientes[cliente_id, 1] = email
+
+# Função para exibir os dados de um cliente
+def exibir_cliente(cliente_id):
+    nome = dados_clientes[cliente_id, 0]
+    email = dados_clientes[cliente_id, 1]
+    print("ID:", cliente_id)
+    print("Nome:", nome)
+    print("Email:", email)
+
+# Cadastrando os clientes
+cadastrar_cliente(0, "João", "joao@example.com")
+cadastrar_cliente(1, "Maria", "maria@example.com")
+cadastrar_cliente(2, "Pedro", "pedro@example.com")
+
+# Exibindo os dados dos clientes
+exibir_cliente(0)
+exibir_cliente(1)
+exibir_cliente(2)
