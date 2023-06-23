@@ -1,0 +1,48 @@
+Neste exemplo, vamos usar a biblioteca NumPy, que é amplamente utilizada para operações numéricas em Python.
+
+Primeiro, você precisa instalar o NumPy. Você pode fazer isso executando o seguinte comando no seu ambiente Python:
+
+python
+Copy code
+pip install numpy
+Depois de instalar o NumPy, você pode começar a usar matrizes e vetores. Aqui está um exemplo:
+
+python
+Copy code
+import numpy as np
+
+# Criando um vetor
+vetor = np.array([1, 2, 3, 4, 5])
+print("Vetor:", vetor)
+
+# Criando uma matriz
+matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print("Matriz:")
+print(matriz)
+
+# Acessando elementos em um vetor
+primeiro_elemento = vetor[0]
+print("Primeiro elemento do vetor:", primeiro_elemento)
+
+# Acessando elementos em uma matriz
+elemento_central = matriz[1, 1]
+print("Elemento central da matriz:", elemento_central)
+
+# Operações com vetores
+soma_vetor = vetor + 2
+print("Soma do vetor com 2:", soma_vetor)
+
+produto_vetor = vetor * 3
+print("Produto do vetor por 3:", produto_vetor)
+
+# Operações com matrizes
+soma_matriz = matriz + 2
+print("Soma da matriz com 2:")
+print(soma_matriz)
+
+produto_matriz = matriz * 3
+print("Produto da matriz por 3:")
+print(produto_matriz)
+Neste exemplo, usamos a biblioteca NumPy para criar vetores e matrizes. Em seguida, demonstramos como acessar elementos em um vetor ou matriz e realizar operações matemáticas básicas, como soma e multiplicação, em vetores e matrizes.
+
+Espero que isso te ajude a entender como trabalhar com matrizes e vetores em Python usando a biblioteca NumPy!
