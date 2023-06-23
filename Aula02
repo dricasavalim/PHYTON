@@ -1,0 +1,45 @@
+Calcular a média de uma lista de números:
+python
+Copy code
+lista = [2, 4, 6, 8, 10]
+media = sum(lista) / len(lista)
+print(media)
+Explicação: Nesse exemplo, temos uma lista de números. Utilizamos a função sum() para somar todos os elementos da lista e dividimos o resultado pelo tamanho da lista para obter a média. O valor médio é então impresso.
+
+Imprimir os números pares de 0 a 10:
+python
+Copy code
+for num in range(0, 11, 2):
+    print(num)
+Explicação: Esse código utiliza um loop for para percorrer os números de 0 a 10, com um passo de 2. A cada iteração, um número par é impresso.
+
+Verificar se uma palavra é um palíndromo:
+python
+Copy code
+palavra = "radar"
+if palavra == palavra[::-1]:
+    print("A palavra é um palíndromo")
+else:
+    print("A palavra não é um palíndromo")
+Explicação: Nesse exemplo, verificamos se a palavra é igual à sua forma invertida. Se for o caso, imprime que é um palíndromo; caso contrário, imprime que não é.
+
+Calcular o fatorial de um número:
+python
+Copy code
+def fatorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fatorial(n - 1)
+
+resultado = fatorial(5)
+print(resultado)
+Explicação: Essa é uma função recursiva que calcula o fatorial de um número. Se o número for igual a zero, retorna 1; caso contrário, multiplica o número pelo fatorial do número anterior. O fatorial de 5 é então calculado e impresso.
+
+Inverter uma string:
+python
+Copy code
+string = "Python"
+invertida = string[::-1]
+print(invertida)
+Explicação: Nesse código, utilizamos o slicing ([::-1]) para obter uma versão invertida da string. A string "Python" é invertida para "nohtyP" 
