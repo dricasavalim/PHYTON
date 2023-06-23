@@ -1,0 +1,102 @@
+o framework Flask para a parte do backend e HTML/CSS para o frontend. Aqui está um exemplo de implementação:
+
+Instale o Flask:
+Certifique-se de ter o Flask instalado em seu ambiente Python.
+
+Crie um arquivo Python, por exemplo, app.py, com o seguinte código:
+
+python
+Copy code
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+notas = []
+
+@app.route('/')
+def index():
+    return render_template('index.html', notas=notas)
+
+@app.route('/adicionar_nota', methods=['GET', 'POST'])
+def adicionar_nota():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        materia = request.form['materia']
+        nota1 = float(request.form['nota1'])
+        nota2 = float(request.form['nota2'])
+        nota3 = float(request.form['nota3'])
+        nota_final = (nota1 + nota2 + nota3) / 3
+
+        observacao = request.form['observacao']
+
+        nota = {
+            'nome': nome,
+            'materia': materia,
+            'nota1': nota1,
+            'nota2': nota2,
+            'nota3': nota3,
+            'nota_final': nota_final,
+            'observacao': observacao
+        }
+
+        notas.append(nota)
+
+        return render_template('index.html', notas=notas)
+
+    return render_template('adicionar_nota.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+Crie uma pasta chamada templates no mesmo diretório do arquivo app.py. Dentro dessa pasta, crie três arquivos HTML: index.html, adicionar_nota.html e estilo.css.
+index.html:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciamento de Notas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <h1>Gerenciamento de Notas</h1>
+    <a href="/adicionar_nota">Adicionar Nota</a>
+    
+    <h2>Notas Registradas:</h2>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Matéria</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Nota 3</th>
+            <th>Nota Final</th>
+            <th>Observação</th>
+        </tr>
+        {% for nota in notas %}
+        <tr>
+            <td>{{ nota.nome }}</td>
+            <td>{{ nota.materia }}</td>
+            <td>{{ nota.nota1 }}</td>
+            <td>{{ nota.nota2 }}</td>
+            <td>{{ nota.nota3 }}</td>
+            <td>{{ nota.nota_final }}</td>
+            <td>{{ nota.observacao }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+adicionar_nota.html:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Nota</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <h1>Adicionar Nota</h1>
+    <form action="/adicionar_nota"
