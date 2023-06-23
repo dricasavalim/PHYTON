@@ -1,0 +1,59 @@
+Exibir "Olá, mundo!":
+python
+ 
+print("Olá, mundo!")
+Este é um exemplo clássico de código em Python. O comando print() exibe o texto entre as aspas.
+
+Calcular a soma de dois números:
+a = 5
+b = 3
+soma = a + b
+print(soma)
+Neste código, declaramos duas variáveis a e b, atribuímos valores a elas e calculamos a soma. O resultado é exibido com o comando print().
+
+Verificar se um número é par:
+python
+numero = 7
+if numero % 2 == 0:
+    print("O número é par.")
+else:
+    print("O número é ímpar.")
+Usamos o operador de módulo % para obter o resto da divisão por 2. Se o resto for zero, o número é par; caso contrário, é ímpar.
+
+Exibir os elementos de uma lista:
+python
+ 
+lista = [1, 2, 3, 4, 5]
+for elemento in lista:
+    print(elemento)
+Usando um loop for, percorremos cada elemento da lista e o exibimos.
+
+Calcular o fatorial de um número:
+python
+ 
+numero = 5
+fatorial = 1
+for i in range(1, numero + 1):
+    fatorial *= i
+print(fatorial)
+Este código calcula o fatorial de um número usando um loop for e operações de multiplicação.
+
+Verificar se uma palavra é um palíndromo:
+python
+ 
+palavra = "radar"
+if palavra == palavra[::-1]:
+    print("A palavra é um palíndromo.")
+else:
+    print("A palavra não é um palíndromo.")
+Com a sintaxe [::-1], invertemos a ordem dos caracteres da palavra. Se a palavra original for igual à palavra invertida, ela é um palíndromo.
+
+Calcular o máximo entre três números:
+python
+ 
+a = 10
+b = 5
+c = 8
+maior = max(a, b, c)
+print(maior)
+O comando max() retorna o maior valor entre os argumentos fornecidos.
