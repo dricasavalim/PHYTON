@@ -1,6 +1,6 @@
 Calcular a média de uma lista de números:
 python
-Copy code
+
 lista = [2, 4, 6, 8, 10]
 media = sum(lista) / len(lista)
 print(media)
@@ -8,14 +8,14 @@ Explicação: Nesse exemplo, temos uma lista de números. Utilizamos a função 
 
 Imprimir os números pares de 0 a 10:
 python
-Copy code
+
 for num in range(0, 11, 2):
     print(num)
 Explicação: Esse código utiliza um loop for para percorrer os números de 0 a 10, com um passo de 2. A cada iteração, um número par é impresso.
 
 Verificar se uma palavra é um palíndromo:
 python
-Copy code
+
 palavra = "radar"
 if palavra == palavra[::-1]:
     print("A palavra é um palíndromo")
@@ -25,7 +25,7 @@ Explicação: Nesse exemplo, verificamos se a palavra é igual à sua forma inve
 
 Calcular o fatorial de um número:
 python
-Copy code
+
 def fatorial(n):
     if n == 0:
         return 1
@@ -38,7 +38,7 @@ Explicação: Essa é uma função recursiva que calcula o fatorial de um númer
 
 Inverter uma string:
 python
-Copy code
+
 string = "Python"
 invertida = string[::-1]
 print(invertida)
