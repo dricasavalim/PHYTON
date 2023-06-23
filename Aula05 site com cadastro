@@ -1,0 +1,84 @@
+Para criar uma página web que utilize o código de cadastro de clientes em Python, você precisará de uma estrutura básica de HTML e utilizar uma abordagem de backend e frontend para interagir com o código Python. Uma forma comum de fazer isso é utilizando um framework web como o Flask. Aqui está um exemplo de como você pode combinar o código Python com HTML usando Flask:
+
+Instalação do Flask:
+Certifique-se de ter o Flask instalado em seu ambiente Python. Você pode instalá-lo usando o seguinte comando:
+
+python
+Copy code
+pip install flask
+Crie um arquivo Python, por exemplo, app.py, com o seguinte código:
+python
+Copy code
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+# Página inicial
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Rota para cadastro de clientes
+@app.route('/cadastro', methods=['GET', 'POST'])
+def cadastro():
+    if request.method == 'POST':
+        cliente_id = int(request.form['cliente_id'])
+        nome = request.form['nome']
+        email = request.form['email']
+        cadastrar_cliente(cliente_id, nome, email)
+        return 'Cliente cadastrado com sucesso!'
+    return render_template('cadastro.html')
+
+# Função para cadastrar um cliente
+def cadastrar_cliente(cliente_id, nome, email):
+    # Código para cadastrar o cliente na matriz ou banco de dados
+    pass
+
+if __name__ == '__main__':
+    app.run(debug=True)
+Crie uma pasta chamada templates no mesmo diretório do arquivo app.py. Dentro dessa pasta, crie dois arquivos HTML: index.html e cadastro.html.
+index.html:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Site</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Meu Site</h1>
+    <a href="/cadastro">Cadastro de Clientes</a>
+</body>
+</html>
+cadastro.html:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Clientes</title>
+</head>
+<body>
+    <h1>Cadastro de Clientes</h1>
+    <form action="/cadastro" method="post">
+        <label for="cliente_id">ID do Cliente:</label>
+        <input type="number" name="cliente_id" id="cliente_id" required><br><br>
+        
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br><br>
+        
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
+Execute o arquivo app.py:
+python
+Copy code
+python app.py
+Acesse http://localhost:5000 em seu navegador para ver a página inicial do site. Clique em "Cadastro de Clientes" para acessar o formulário de cadastro e preencher os dados do cliente.
+Observe que neste exemplo, a função cadastrar_cliente está apenas simulando o cadastro do cliente. Você precisará adicionar o código necessário para armazenar os dados do cliente em uma matriz ou em um banco de dados.
