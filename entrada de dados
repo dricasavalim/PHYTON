@@ -1,0 +1,104 @@
+ Python para iniciantes:
+
+Hello World:
+O famoso "Hello, World!" é uma ótima maneira de introduzir os alunos ao conceito de saída de texto em um programa.
+
+python
+Copy code
+print("Hello, World!")
+Variáveis e Tipos de Dados:
+Ensine sobre diferentes tipos de dados e como declarar variáveis.
+
+python
+Copy code
+# Inteiro
+age = 25
+
+# Ponto flutuante
+height = 5.7
+
+# String
+name = "Alice"
+
+# Booleano
+is_student = True
+Entrada do Usuário:
+Mostre como obter entrada do usuário e armazená-la em variáveis.
+
+python
+Copy code
+name = input("Digite seu nome: ")
+print("Olá, " + name + "!")
+Estruturas Condicionais:
+Introduza instruções condicionais para tomada de decisões.
+
+python
+Copy code
+age = int(input("Digite sua idade: "))
+if age >= 18:
+    print("Você é maior de idade.")
+else:
+    print("Você é menor de idade.")
+Estruturas de Repetição:
+Demonstre loops for e while.
+
+python
+Copy code
+# Loop for
+for i in range(5):
+    print(i)
+
+# Loop while
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+Listas:
+Introduza listas e como acessar seus elementos.
+
+python
+Copy code
+fruits = ["apple", "banana", "orange"]
+print(fruits[0])  # Saída: apple
+Funções:
+Mostre como definir e chamar funções.
+
+python
+Copy code
+def greet(name):
+    print("Hello, " + name + "!")
+
+greet("Bob")
+Dicionários:
+Ensine sobre dicionários para armazenar pares chave-valor.
+
+python
+Copy code
+student = {"name": "Alice", "age": 20, "major": "Computer Science"}
+print(student["name"])  # Saída: Alice
+Manipulação de Arquivos:
+Introduza como ler e escrever em arquivos.
+
+python
+Copy code
+# Escrever em um arquivo
+with open("arquivo.txt", "w") as file:
+    file.write("Olá, mundo!")
+
+# Ler de um arquivo
+with open("arquivo.txt", "r") as file:
+    content = file.read()
+    print(content)
+Tratamento de Exceções:
+Ensine como lidar com erros usando blocos try-except.
+
+python
+Copy code
+try:
+    num = int(input("Digite um número: "))
+    result = 10 / num
+    print("Resultado:", result)
+except ZeroDivisionError:
+    print("Não é possível dividir por zero.")
+except ValueError:
+    print("Entrada inválida. Digite um número.")
