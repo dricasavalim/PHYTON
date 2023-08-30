@@ -1,0 +1,28 @@
+import math
+
+def calculate_quadratic_roots(a, b, c):
+    discriminant = b**2 - 4*a*c
+    
+    if discriminant > 0:
+        root1 = (-b + math.sqrt(discriminant)) / (2*a)
+        root2 = (-b - math.sqrt(discriminant)) / (2*a)
+        return root1, root2
+    elif discriminant == 0:
+        root = -b / (2*a)
+        return root, None  # Retorna uma única raiz e None para a segunda raiz
+    else:
+        return None, None  # Retorna None para ambas as raízes complexas
+
+print("Calculadora de Raízes da Equação Quadrática (Bhaskara)")
+a = float(input("Digite o coeficiente 'a': "))
+b = float(input("Digite o coeficiente 'b': "))
+c = float(input("Digite o coeficiente 'c': "))
+
+root1, root2 = calculate_quadratic_roots(a, b, c)
+
+if root1 is None:
+    print("A equação não possui raízes reais.")
+elif root2 is None:
+    print("A raiz da equação é:", root1)
+else:
+    print("As raízes da equação são:", root1, "e", root2)
