@@ -1,0 +1,11 @@
+# Inteiro
+age = 25
+
+# Ponto flutuante
+height = 5.7
+
+# String
+name = "Alice"
+
+# Booleano
+is_student = True
