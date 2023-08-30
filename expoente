@@ -1,0 +1,5 @@
+base = float(input("Digite a base: "))
+expoente = int(input("Digite o expoente: "))
+
+resultado = base ** expoente
+print("{} elevado a {} é igual a {}".format(base, expoente, resultado))
