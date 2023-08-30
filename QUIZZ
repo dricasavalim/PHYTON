@@ -1,0 +1,48 @@
+def fazer_pergunta(pergunta, opcoes, resposta_correta):
+    print(pergunta)
+    for i, opcao in enumerate(opcoes, start=1):
+        print(f"{i}. {opcao}")
+    
+    resposta = int(input("Digite o número da opção correta: "))
+    if resposta == resposta_correta:
+        print("Resposta correta!\n")
+        return True
+    else:
+        print(f"Resposta incorreta. A resposta correta era a opção {resposta_correta}.\n")
+        return False
+
+def main():
+    pontos = 0
+    
+    print("Bem-vindo ao Quiz de Perguntas e Respostas!")
+    
+    perguntas = [
+        {
+            "pergunta": "Qual é a capital da França?",
+            "opcoes": ["Paris", "Londres", "Berlim", "Roma"],
+            "resposta_correta": 1
+        },
+        {
+            "pergunta": "Quem pintou a Mona Lisa?",
+            "opcoes": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Michelangelo"],
+            "resposta_correta": 0
+        },
+        {
+            "pergunta": "Quantos planetas existem em nosso sistema solar?",
+            "opcoes": ["7", "8", "9", "10"],
+            "resposta_correta": 1
+        }
+    ]
+    
+    for pergunta_info in perguntas:
+        pergunta = pergunta_info["pergunta"]
+        opcoes = pergunta_info["opcoes"]
+        resposta_correta = pergunta_info["resposta_correta"]
+        
+        if fazer_pergunta(pergunta, opcoes, resposta_correta):
+            pontos += 1
+    
+    print(f"Fim do jogo! Você marcou {pontos} pontos de {len(perguntas)} possíveis.")
+
+if __name__ == "__main__":
+    main()
