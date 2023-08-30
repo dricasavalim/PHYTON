@@ -1,0 +1,47 @@
+def calculate_inss(salary):
+    # Simulação simplificada da tabela de INSS (2023)
+    if salary <= 1100:
+        return salary * 0.075
+    elif salary <= 2203.48:
+        return salary * 0.09
+    elif salary <= 3305.22:
+        return salary * 0.12
+    elif salary <= 6433.57:
+        return salary * 0.14
+    else:
+        return 6433.57 * 0.14
+
+def calculate_irrf(salary, inss):
+    taxable_income = salary - inss
+    if taxable_income <= 1903.98:
+        return 0
+    elif taxable_income <= 2826.65:
+        return (taxable_income * 0.075) - 142.8
+    elif taxable_income <= 3751.05:
+        return (taxable_income * 0.15) - 354.8
+    elif taxable_income <= 4664.68:
+        return (taxable_income * 0.225) - 636.13
+    else:
+        return (taxable_income * 0.275) - 869.36
+
+def calculate_total_salary(base_salary, additional_night, insalubrity, danger, benefits):
+    total_salary = base_salary + additional_night + insalubrity + danger + sum(benefits)
+    return total_salary
+
+base_salary = float(input("Digite o salário base: "))
+additional_night = float(input("Digite o valor do adicional noturno: "))
+insalubrity = float(input("Digite o valor de insalubridade: "))
+danger = float(input("Digite o valor de periculosidade: "))
+num_benefits = int(input("Quantos benefícios o funcionário tem? "))
+benefits = []
+for _ in range(num_benefits):
+    benefit = float(input("Digite o valor do benefício: "))
+    benefits.append(benefit)
+
+inss = calculate_inss(base_salary)
+irrf = calculate_irrf(base_salary, inss)
+total_salary = calculate_total_salary(base_salary, additional_night, insalubrity, danger, benefits)
+
+print("INSS:", inss)
+print("IRRF:", irrf)
+print("Salário líquido:", total_salary - (inss + irrf))
