@@ -1,0 +1,109 @@
+questões lógicas:
+
+Problema do Caixeiro Viajante (TSP - Traveling Salesman Problem):
+Um problema clássico de otimização onde o objetivo é encontrar a rota mais curta que passa por todas as cidades uma vez e retorna à cidade de origem.
+
+python
+Copy code
+# Exemplo usando biblioteca itertools para gerar todas as permutações
+import itertools
+
+def distance(city1, city2):
+    # Calcula a distância entre duas cidades
+    pass
+
+cities = ['A', 'B', 'C', 'D']
+shortest_distance = float('inf')
+best_route = None
+
+for route in itertools.permutations(cities):
+    total_distance = 0
+    for i in range(len(route) - 1):
+        total_distance += distance(route[i], route[i + 1])
+    total_distance += distance(route[-1], route[0])
+    
+    if total_distance < shortest_distance:
+        shortest_distance = total_distance
+        best_route = route
+
+print("Melhor rota:", best_route)
+print("Distância total:", shortest_distance)
+Jogo da Velha (Tic-Tac-Toe):
+Um jogo da velha onde dois jogadores podem jogar alternadamente até que alguém vença ou empate.
+
+python
+Copy code
+def print_board(board):
+    for row in board:
+        print(" | ".join(row))
+        print("-" * 9)
+
+def check_winner(board, player):
+    # Verifica se o jogador ganhou em alguma linha, coluna ou diagonal
+    pass
+
+def is_draw(board):
+    # Verifica se o tabuleiro está completamente preenchido, resultando em empate
+    pass
+
+def play_game():
+    board = [[' ' for _ in range(3)] for _ in range(3)]
+    current_player = 'X'
+    
+    while True:
+        print_board(board)
+        row = int(input("Digite a linha (0-2): "))
+        col = int(input("Digite a coluna (0-2): "))
+        
+        if board[row][col] == ' ':
+            board[row][col] = current_player
+            if check_winner(board, current_player):
+                print_board(board)
+                print(current_player, "ganhou!")
+                break
+            elif is_draw(board):
+                print_board(board)
+                print("Empate!")
+                break
+            current_player = 'O' if current_player == 'X' else 'X'
+        else:
+            print("Essa posição já está ocupada. Tente novamente.")
+
+play_game()
+Algoritmo Genético Simples:
+Um exemplo de algoritmo genético para encontrar uma string-alvo usando evolução simulada.
+
+python
+Copy code
+import random
+import string
+
+target_string = "hello world"
+population_size = 100
+mutation_rate = 0.1
+
+def generate_random_string(length):
+    return ''.join(random.choice(string.ascii_lowercase + ' ') for _ in range(length))
+
+def calculate_fitness(string):
+    return sum(1 for i, j in zip(string, target_string) if i == j)
+
+def mutate_string(string):
+    return ''.join(c if random.random() > mutation_rate else random.choice(string.ascii_lowercase + ' ') for c in string)
+
+population = [generate_random_string(len(target_string)) for _ in range(population_size)]
+
+generations = 0
+while True:
+    generations += 1
+    population = sorted(population, key=lambda x: calculate_fitness(x), reverse=True)
+    if population[0] == target_string:
+        break
+    new_population = population[:10]
+    for _ in range(population_size - 10):
+        parent = random.choice(population[:50])
+        child = mutate_string(parent)
+        new_population.append(child)
+    population = new_population
+
+print("Encontrada em {} gerações: {}".format(generations, population[0]))
