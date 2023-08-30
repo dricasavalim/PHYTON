@@ -1,0 +1,60 @@
+def fazer_pergunta(pergunta, opcoes, resposta_correta):
+    print(pergunta)
+    for i, opcao in enumerate(opcoes, start=1):
+        print(f"{i}. {opcao}")
+    
+    resposta = int(input("Digite o número da opção correta: "))
+    if resposta == resposta_correta:
+        print("Resposta correta!\n")
+        return True
+    else:
+        print("Resposta incorreta. Tente novamente.\n")
+        return False
+
+def main():
+    print("Bem-vindo ao Jogo Detetive!")
+    print("Você é um detetive investigando um caso misterioso.")
+    print("Responda às perguntas para desvendar o mistério.\n")
+    
+    pistas = [
+        {
+            "pergunta": "Qual é a última pessoa que viu a vítima?",
+            "opcoes": ["Cônjuge", "Amigo", "Colega de trabalho", "Desconhecido"],
+            "resposta_correta": 0
+        },
+        {
+            "pergunta": "Qual é a arma do crime?",
+            "opcoes": ["Faca", "Pistola", "Veneno", "Objeto contundente"],
+            "resposta_correta": 1
+        },
+        {
+            "pergunta": "Onde ocorreu o crime?",
+            "opcoes": ["Casa da vítima", "Local de trabalho", "Rua", "Parque"],
+            "resposta_correta": 2
+        }
+    ]
+    
+    suspeito = ""
+    arma = ""
+    local = ""
+    
+    for pista in pistas:
+        pergunta = pista["pergunta"]
+        opcoes = pista["opcoes"]
+        resposta_correta = pista["resposta_correta"]
+        
+        while not fazer_pergunta(pergunta, opcoes, resposta_correta):
+            pass
+        
+        if pergunta == pistas[0]["pergunta"]:
+            suspeito = opcoes[resposta_correta]
+        elif pergunta == pistas[1]["pergunta"]:
+            arma = opcoes[resposta_correta]
+        elif pergunta == pistas[2]["pergunta"]:
+            local = opcoes[resposta_correta]
+    
+    print("Investigação concluída!")
+    print(f"Com base nas suas respostas, o detetive conclui que o crime foi cometido por {suspeito}, usando uma {arma}, no(a) {local}.")
+
+if __name__ == "__main__":
+    main()
