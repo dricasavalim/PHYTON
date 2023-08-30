@@ -1,0 +1,47 @@
+import random
+
+def escolher_palavra():
+    palavras = ["python", "programacao", "jogo", "computador", "desenvolvimento", "diversao"]
+    return random.choice(palavras)
+
+def mostrar_palavra(palavra, letras_corretas):
+    for letra in palavra:
+        if letra in letras_corretas:
+            print(letra, end=" ")
+        else:
+            print("_", end=" ")
+    print()
+
+def main():
+    palavra = escolher_palavra()
+    letras_corretas = []
+    tentativas_erradas = 0
+    max_tentativas = 6
+    
+    print("Bem-vindo ao Jogo da Forca!")
+    
+    while True:
+        mostrar_palavra(palavra, letras_corretas)
+        letra = input("Digite uma letra: ")
+        
+        if letra in letras_corretas:
+            print("Você já tentou essa letra.")
+            continue
+        
+        if letra in palavra:
+            letras_corretas.append(letra)
+            print("Letra correta!\n")
+        else:
+            tentativas_erradas += 1
+            print("Letra incorreta.\n")
+        
+        if tentativas_erradas == max_tentativas:
+            print("Você perdeu! A palavra era:", palavra)
+            break
+        
+        if all(letra in letras_corretas for letra in palavra):
+            print("Parabéns! Você descobriu a palavra:", palavra)
+            break
+
+if __name__ == "__main__":
+    main()
