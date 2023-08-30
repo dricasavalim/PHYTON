@@ -1,0 +1,54 @@
+import random
+
+def escolher_palavra():
+    palavras = ["brasil", "argentina", "portugal", "franca", "espanha", "canada", "japao",
+                "rio", "paris", "lisboa", "madrid", "roma", "nova york", "toronto", "pequim"]
+    return random.choice(palavras)
+
+def mostrar_palavra(palavra, letras_corretas):
+    for letra in palavra:
+        if letra in letras_corretas:
+            print(letra, end=" ")
+        else:
+            print("_", end=" ")
+    print()
+
+def main():
+    palavra = escolher_palavra().lower()
+    letras_corretas = []
+    letras_erradas = []
+    max_tentativas = 6
+    
+    print("Bem-vindo ao Jogo da Forca com Países e Cidades!")
+    
+    while True:
+        mostrar_palavra(palavra, letras_corretas)
+        print("\nLetras erradas:", " ".join(letras_erradas))
+        
+        if len(letras_erradas) >= max_tentativas:
+            print("Você perdeu! A palavra era:", palavra)
+            break
+        
+        if all(letra in letras_corretas for letra in palavra):
+            print("Parabéns! Você descobriu a palavra:", palavra)
+            break
+        
+        letra = input("Digite uma letra: ").lower()
+        
+        if len(letra) != 1 or not letra.isalpha():
+            print("Digite uma única letra válida.")
+            continue
+        
+        if letra in letras_corretas or letra in letras_erradas:
+            print("Você já tentou essa letra.")
+            continue
+        
+        if letra in palavra:
+            letras_corretas.append(letra)
+            print("Letra correta!\n")
+        else:
+            letras_erradas.append(letra)
+            print("Letra incorreta.\n")
+
+if __name__ == "__main__":
+    main()
