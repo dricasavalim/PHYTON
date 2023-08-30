@@ -1,0 +1,9 @@
+num_list = []
+n = int(input("Quantos números você deseja calcular a média? "))
+
+for i in range(n):
+    num = float(input("Digite o número {}: ".format(i + 1)))
+    num_list.append(num)
+
+average = sum(num_list) / n
+print("A média é:", average)
