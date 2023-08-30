@@ -1,0 +1,16 @@
+def calculate_commission(sales_amount, commission_rate):
+    return sales_amount * commission_rate / 100
+
+sales_amount = float(input("Digite o valor das vendas: "))
+commission_rate = float(input("Digite a taxa de comissão (%): "))
+
+commission = calculate_commission(sales_amount, commission_rate)
+print("A comissão do vendedor é:", commission)
+Neste exemplo, o código solicita o valor das vendas e a taxa de comissão como entrada do usuário. A função calculate_commission calcula a comissão multiplicando o valor das vendas pela taxa de comissão (dividida por 100 para obter a porcentagem). Em seguida, a comissão é impressa na saída.
+
+Lembre-se de que você pode personalizar esse código de acordo com suas necessidades, como adicionar validações de entrada ou manipular várias vendas de diferentes vendedores.
+
+
+
+
+
