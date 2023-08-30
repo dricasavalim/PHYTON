@@ -1,0 +1,42 @@
+import math
+
+def calculate_rectangle_area(width, height):
+    return width * height
+
+def calculate_square_area(side):
+    return side * side
+
+def calculate_triangle_area(base, height):
+    return 0.5 * base * height
+
+def calculate_circle_area(radius):
+    return math.pi * radius * radius
+
+print("Escolha a figura geométrica para calcular a área:")
+print("1. Retângulo")
+print("2. Quadrado")
+print("3. Triângulo")
+print("4. Círculo")
+
+choice = int(input("Digite o número correspondente à sua escolha: "))
+
+if choice == 1:
+    width = float(input("Digite a largura do retângulo: "))
+    height = float(input("Digite a altura do retângulo: "))
+    area = calculate_rectangle_area(width, height)
+    print("A área do retângulo é:", area)
+elif choice == 2:
+    side = float(input("Digite o lado do quadrado: "))
+    area = calculate_square_area(side)
+    print("A área do quadrado é:", area)
+elif choice == 3:
+    base = float(input("Digite a base do triângulo: "))
+    height = float(input("Digite a altura do triângulo: "))
+    area = calculate_triangle_area(base, height)
+    print("A área do triângulo é:", area)
+elif choice == 4:
+    radius = float(input("Digite o raio do círculo: "))
+    area = calculate_circle_area(radius)
+    print("A área do círculo é:", area)
+else:
+    print("Escolha inválida. Por favor, escolha uma opção válida.")
