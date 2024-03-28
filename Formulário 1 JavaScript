@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Cadastro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Cadastro de Atleta</h1>
+  <form id="cadastroForm" action="LINK_DO_SEU_FORMULARIO_DO_GOOGLE_FORMS" method="POST">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf" required>
+
+    <label for="rg">RG:</label>
+    <input type="text" id="rg" name="rg" required>
+
+    <label for="carteiraTrabalho">Carteira de Trabalho:</label>
+    <input type="text" id="carteiraTrabalho" name="carteiraTrabalho" required>
+
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" required>
+
+    <label for="posicao">Posição:</label>
+    <select id="posicao" name="posicao">
+      <option value="goleiro">Goleiro</option>
+      <option value="zagueiro">Zagueiro</option>
+      <option value="lateral">Lateral</option>
+      <option value="meio-campo">Meio-campo</option>
+      <option value="atacante">Atacante</option>
+    </select>
